@@ -1,4 +1,3 @@
-<p style="color: green"><%= notice %></p>
 
 <h1>Customers</h1>
 
@@ -7,6 +6,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th> </th>
       <th>Full Name</th>
       <th>Number of Orders</th>
       <th>Actions</th>
@@ -15,12 +15,15 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
+        <td><%= icon('fa-solid', 'user') %></td>
         <td><%= customer.full_name %></td>
         <td><%= customer.orders.count %></td>
         <td>
-          <%= link_to 'Show', customer_path(customer), class: 'btn btn-info btn-sm' %>
-          <%= link_to 'Edit', edit_customer_path(customer), class: 'btn btn-warning btn-sm' %>
-          <%= button_to 'Delete', customer_path(customer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+        <div class="btn-group" role="group">
+          <%= link_to 'Show', customer_path(customer), class: 'btn btn-primary me-5' %>
+          <%= link_to 'Edit', edit_customer_path(customer), class: 'btn btn-primary me-5' %>
+          <%= button_to 'Delete', customer_path(customer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+        </div>
         </td>
       </tr>
     <% end %>
