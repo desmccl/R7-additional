@@ -13,6 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap";
+ @import "font-awesome";
+
+ :root {
+  --bs-body-bg: #f0b0a3;
+}
+
  .my_alert {
     color: red;
+  }
+
+  .banner-background {
+    background-image: url('/assets/ordericon.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Rounded';
+  }
+  
+  @font-face {
+    font-family: 'Rounded';
+    src: url('/assets/Typo_Round_Regular_Demo.otf');
   }
